@@ -103,7 +103,7 @@ const Index = () => {
         </header>
 
         <Tabs defaultValue="bio" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-8">
+          <TabsList className="grid w-full grid-cols-6 mb-8">
             <TabsTrigger value="bio">
               <Icon name="User" className="mr-2 h-4 w-4" />
               Биография
@@ -111,6 +111,10 @@ const Index = () => {
             <TabsTrigger value="hobbies">
               <Icon name="Heart" className="mr-2 h-4 w-4" />
               Интересы
+            </TabsTrigger>
+            <TabsTrigger value="food">
+              <Icon name="UtensilsCrossed" className="mr-2 h-4 w-4" />
+              Кухня
             </TabsTrigger>
             <TabsTrigger value="quotes">
               <Icon name="Quote" className="mr-2 h-4 w-4" />
@@ -125,6 +129,123 @@ const Index = () => {
               Карта мест
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="food" className="animate-fade-in">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-3xl">Любимые блюда</CardTitle>
+                <CardDescription>Гастрономические предпочтения писателя</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-4xl">🍲</div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Щи и каша</h4>
+                          <p className="text-foreground/80">
+                            Простая русская пища была основой рациона. Особенно любил традиционные щи 
+                            и гречневую кашу — символы народной кухни.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-4xl">🫖</div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Крепкий чай</h4>
+                          <p className="text-foreground/80">
+                            Любил крепкий чёрный чай, который пил в больших количествах во время 
+                            ночной работы над романами. Чай помогал сосредоточиться.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-4xl">🥧</div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Пироги</h4>
+                          <p className="text-foreground/80">
+                            С удовольствием ел традиционные русские пироги с различными начинками — 
+                            капустой, мясом, рыбой. Это напоминало о детстве.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-4xl">🍞</div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Чёрный хлеб</h4>
+                          <p className="text-foreground/80">
+                            Ржаной хлеб был неотъемлемой частью каждой трапезы. После каторги 
+                            особенно ценил простую крестьянскую еду.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-4xl">🐟</div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Рыба</h4>
+                          <p className="text-foreground/80">
+                            Любил блюда из рыбы, особенно в постные дни. Уха и запечённая рыба 
+                            часто появлялись на столе писателя.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="text-4xl">☕</div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Кофе</h4>
+                          <p className="text-foreground/80">
+                            Крепкий кофе был постоянным спутником творчества. Пил его горячим и 
+                            без сахара, особенно в периоды интенсивной работы.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <div className="mt-8 bg-muted/50 p-6 rounded-lg border">
+                  <div className="flex items-start gap-3">
+                    <Icon name="Info" className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <h5 className="font-semibold mb-2">О питании писателя</h5>
+                      <p className="text-foreground/80 text-sm leading-relaxed">
+                        Достоевский не был гурманом и предпочитал простую пищу. После возвращения с каторги 
+                        его вкусы стали ещё скромнее. Он часто работал по ночам, забывая о еде, 
+                        поддерживая себя только чаем и кофе. Жена Анна Григорьевна старалась следить 
+                        за его питанием и здоровьем.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="hobbies" className="animate-fade-in">
             <Card>
