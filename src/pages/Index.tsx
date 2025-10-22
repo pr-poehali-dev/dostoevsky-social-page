@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Badge } from '@/components/ui/badge';
@@ -7,8 +7,6 @@ import { Separator } from '@/components/ui/separator';
 import Icon from '@/components/ui/icon';
 
 const Index = () => {
-  const [selectedLocation, setSelectedLocation] = useState<string | null>(null);
-
   const quotes = [
     {
       text: 'Красота спасет мир',
@@ -24,60 +22,6 @@ const Index = () => {
       text: 'Человек есть тайна. Ее надо разгадать, и ежели будешь ее разгадывать всю жизнь, то не говори, что потерял время',
       source: 'Письмо брату',
       year: 1839
-    }
-  ];
-
-  const works = [
-    {
-      title: 'Преступление и наказание',
-      year: 1866,
-      genre: 'Роман',
-      description: 'История Родиона Раскольникова и его внутренней борьбы'
-    },
-    {
-      title: 'Идиот',
-      year: 1869,
-      genre: 'Роман',
-      description: 'Повествование о князе Мышкине, воплощении христианской морали'
-    },
-    {
-      title: 'Братья Карамазовы',
-      year: 1880,
-      genre: 'Роман',
-      description: 'Философский роман о семье Карамазовых и извечных вопросах бытия'
-    },
-    {
-      title: 'Бесы',
-      year: 1872,
-      genre: 'Роман',
-      description: 'Политический роман о революционных идеях и их последствиях'
-    }
-  ];
-
-  const locations = [
-    {
-      id: 'sennaya',
-      name: 'Сенная площадь',
-      work: 'Преступление и наказание',
-      description: 'Место, где Раскольников наблюдал за жизнью простого народа',
-      x: 45,
-      y: 60
-    },
-    {
-      id: 'nevsky',
-      name: 'Невский проспект',
-      work: 'Идиот',
-      description: 'Главная улица Петербурга, где происходили ключевые встречи',
-      x: 50,
-      y: 40
-    },
-    {
-      id: 'kanal',
-      name: 'Канал Грибоедова',
-      work: 'Преступление и наказание',
-      description: 'Район, где жил Раскольников',
-      x: 55,
-      y: 55
     }
   ];
 
@@ -103,7 +47,7 @@ const Index = () => {
         </header>
 
         <Tabs defaultValue="bio" className="w-full">
-          <TabsList className="grid w-full grid-cols-7 mb-8">
+          <TabsList className="grid w-full grid-cols-5 mb-8">
             <TabsTrigger value="bio">
               <Icon name="User" className="mr-2 h-4 w-4" />
               Биография
@@ -123,14 +67,6 @@ const Index = () => {
             <TabsTrigger value="quotes">
               <Icon name="Quote" className="mr-2 h-4 w-4" />
               Цитаты
-            </TabsTrigger>
-            <TabsTrigger value="works">
-              <Icon name="BookOpen" className="mr-2 h-4 w-4" />
-              Произведения
-            </TabsTrigger>
-            <TabsTrigger value="map">
-              <Icon name="Map" className="mr-2 h-4 w-4" />
-              Карта мест
             </TabsTrigger>
           </TabsList>
 
@@ -552,108 +488,7 @@ const Index = () => {
             </div>
           </TabsContent>
 
-          <TabsContent value="works" className="animate-fade-in">
-            <div className="grid gap-6">
-              {works.map((work, index) => (
-                <Card key={index} className="hover:shadow-lg transition-shadow">
-                  <CardHeader>
-                    <div className="flex items-start justify-between">
-                      <div>
-                        <CardTitle className="text-2xl mb-2">{work.title}</CardTitle>
-                        <CardDescription className="text-base">
-                          {work.description}
-                        </CardDescription>
-                      </div>
-                      <Badge variant="outline" className="text-base px-3 py-1">
-                        {work.year}
-                      </Badge>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <div className="flex items-center gap-2 text-muted-foreground">
-                      <Icon name="BookType" className="h-4 w-4" />
-                      <span>{work.genre}</span>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </TabsContent>
 
-          <TabsContent value="map" className="animate-fade-in">
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-3xl">Литературный Петербург</CardTitle>
-                <CardDescription>
-                  Места действия романов Достоевского. Нажмите на точку, чтобы узнать подробнее
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="relative bg-secondary/30 rounded-lg overflow-hidden border-2 border-border">
-                  <div className="aspect-[16/10] relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/50 to-accent/20">
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-6xl opacity-20">
-                        🏛️
-                      </div>
-                      
-                      {locations.map((location) => (
-                        <button
-                          key={location.id}
-                          onClick={() => setSelectedLocation(location.id)}
-                          className="absolute transform -translate-x-1/2 -translate-y-1/2 group"
-                          style={{ left: `${location.x}%`, top: `${location.y}%` }}
-                        >
-                          <div className={`relative ${
-                            selectedLocation === location.id ? 'scale-125' : ''
-                          } transition-transform`}>
-                            <div className="absolute inset-0 bg-primary/20 rounded-full blur-xl animate-pulse"></div>
-                            <Icon 
-                              name="MapPin" 
-                              className={`h-8 w-8 relative z-10 ${
-                                selectedLocation === location.id 
-                                  ? 'text-primary fill-primary' 
-                                  : 'text-accent fill-accent'
-                              }`}
-                            />
-                          </div>
-                        </button>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-4">
-                  {locations.map((location) => (
-                    <div
-                      key={location.id}
-                      className={`p-4 rounded-lg border-2 transition-all ${
-                        selectedLocation === location.id
-                          ? 'border-primary bg-primary/5 shadow-md'
-                          : 'border-border bg-card hover:border-primary/50'
-                      }`}
-                    >
-                      <div className="flex items-start gap-3">
-                        <Icon 
-                          name="MapPin" 
-                          className={`h-5 w-5 mt-1 flex-shrink-0 ${
-                            selectedLocation === location.id ? 'text-primary' : 'text-accent'
-                          }`}
-                        />
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-lg mb-1">{location.name}</h4>
-                          <p className="text-sm text-muted-foreground mb-2">
-                            <Icon name="Book" className="inline h-3 w-3 mr-1" />
-                            {location.work}
-                          </p>
-                          <p className="text-foreground/80">{location.description}</p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </TabsContent>
         </Tabs>
       </div>
     </div>
