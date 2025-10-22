@@ -103,7 +103,7 @@ const Index = () => {
         </header>
 
         <Tabs defaultValue="bio" className="w-full">
-          <TabsList className="grid w-full grid-cols-6 mb-8">
+          <TabsList className="grid w-full grid-cols-7 mb-8">
             <TabsTrigger value="bio">
               <Icon name="User" className="mr-2 h-4 w-4" />
               Биография
@@ -115,6 +115,10 @@ const Index = () => {
             <TabsTrigger value="food">
               <Icon name="UtensilsCrossed" className="mr-2 h-4 w-4" />
               Кухня
+            </TabsTrigger>
+            <TabsTrigger value="music">
+              <Icon name="Music" className="mr-2 h-4 w-4" />
+              Музыка
             </TabsTrigger>
             <TabsTrigger value="quotes">
               <Icon name="Quote" className="mr-2 h-4 w-4" />
@@ -129,6 +133,117 @@ const Index = () => {
               Карта мест
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="music" className="animate-fade-in">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-3xl">Любимая музыка</CardTitle>
+                <CardDescription>Музыкальные предпочтения и влияния</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Music2" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Моцарт</h4>
+                          <p className="text-foreground/80">
+                            Особенно любил оперу «Дон Жуан». Музыка Моцарта олицетворяла для него гармонию 
+                            и совершенство, контрастирующие с трагедией человеческого существования.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Music3" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Бетховен</h4>
+                          <p className="text-foreground/80">
+                            Преклонялся перед Девятой симфонией. Видел в музыке Бетховена ту же борьбу духа 
+                            и страдания, которую исследовал в своих романах.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Music4" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Русские романсы</h4>
+                          <p className="text-foreground/80">
+                            Любил слушать народные песни и городские романсы. Они напоминали о России 
+                            и русской душе, столь важных для его творчества.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Church" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Церковное пение</h4>
+                          <p className="text-foreground/80">
+                            Глубоко трогала литургическая музыка и православные песнопения. 
+                            Посещал службы не только ради молитвы, но и ради пения.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <Separator />
+
+                <div className="bg-primary/5 p-6 rounded-lg border-l-4 border-primary">
+                  <div className="flex items-start gap-3">
+                    <Icon name="Quote" className="h-6 w-6 text-primary mt-1" />
+                    <div>
+                      <p className="text-foreground/90 italic leading-relaxed mb-3">
+                        «Музыка — это откровение более высокое, чем мудрость и философия»
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Достоевский часто цитировал эту мысль Бетховена и был с ней полностью согласен.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-muted/50 p-6 rounded-lg border">
+                  <div className="flex items-start gap-3">
+                    <Icon name="Info" className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <h5 className="font-semibold mb-2">Музыка в жизни писателя</h5>
+                      <p className="text-foreground/80 text-sm leading-relaxed">
+                        Хотя Достоевский не был музыкантом, музыка играла важную роль в его жизни. 
+                        Он посещал концерты и оперные постановки, особенно в Петербурге. Жена Анна вспоминала, 
+                        как он мог расчувствоваться до слёз, слушая любимые произведения. В романе «Идиот» 
+                        князь Мышкин упоминает арию из «Дон Жуана», что отражает личные музыкальные пристрастия автора.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="food" className="animate-fade-in">
             <Card>
