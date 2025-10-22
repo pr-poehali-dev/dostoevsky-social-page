@@ -47,7 +47,7 @@ const Index = () => {
         </header>
 
         <Tabs defaultValue="bio" className="w-full">
-          <TabsList className="grid w-full grid-cols-5 mb-8">
+          <TabsList className="grid w-full grid-cols-6 mb-8">
             <TabsTrigger value="bio">
               <Icon name="User" className="mr-2 h-4 w-4" />
               Биография
@@ -64,11 +64,113 @@ const Index = () => {
               <Icon name="Music" className="mr-2 h-4 w-4" />
               Музыка
             </TabsTrigger>
+            <TabsTrigger value="sport">
+              <Icon name="Dumbbell" className="mr-2 h-4 w-4" />
+              Спорт
+            </TabsTrigger>
             <TabsTrigger value="quotes">
               <Icon name="Quote" className="mr-2 h-4 w-4" />
               Цитаты
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="sport" className="animate-fade-in">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-3xl">Физическая активность</CardTitle>
+                <CardDescription>Спорт и движение в жизни писателя</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Footprints" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Пешие прогулки</h4>
+                          <p className="text-foreground/80">
+                            Ежедневные многочасовые прогулки по Петербургу были любимым занятием. 
+                            Мог проходить до 15-20 километров за день, обдумывая сюжеты.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Waves" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Купание</h4>
+                          <p className="text-foreground/80">
+                            Любил купаться в реках и озерах. Во время отдыха в Старой Руссе немецкого курорта 
+                            регулярно принимал водные процедуры для здоровья.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="TreePine" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Прогулки за городом</h4>
+                          <p className="text-foreground/80">
+                            В последние годы жизни любил гулять в Старой Руссе, исследуя окрестности и леса. 
+                            Природа помогала восстановить силы и вдохновляла на творчество.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-accent hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-accent/10 p-3 rounded-full">
+                          <Icon name="Mountain" className="h-6 w-6 text-accent" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Горные прогулки</h4>
+                          <p className="text-foreground/80">
+                            Во время поездок в Швейцарию совершал прогулки в горы. Альпийские пейзажи 
+                            произвели на него сильное впечатление и отразились в романе «Идиот».
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+
+                <Separator />
+
+                <div className="bg-muted/50 p-6 rounded-lg border">
+                  <div className="flex items-start gap-3">
+                    <Icon name="Info" className="h-5 w-5 text-primary mt-1" />
+                    <div>
+                      <h5 className="font-semibold mb-2">О физической активности</h5>
+                      <p className="text-foreground/80 text-sm leading-relaxed">
+                        Хотя Достоевский не занимался спортом в современном понимании, он понимал важность физической 
+                        активности для здоровья. Прогулки помогали ему справляться с эпилепсией, а также были 
+                        неотъемлемой частью его творческого процесса. Жена Анна вспоминала, как он мог часами ходить 
+                        по городу, обдумывая очередную главу романа. После каторги, где приходилось выполнять 
+                        тяжелый физический труд, он стал ценить свободу движения и возможность гулять, куда захочется.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="music" className="animate-fade-in">
             <Card>
