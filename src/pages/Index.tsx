@@ -87,7 +87,7 @@ const Index = () => {
         <header className="mb-12 text-center">
           <div className="flex items-center justify-center gap-4 mb-6">
             <Avatar className="w-32 h-32 border-4 border-primary">
-              <AvatarImage src="https://v3b.fal.media/files/b/rabbit/Z4vRnXBsB1oqXD3U8fOSG_output.png" />
+              <AvatarImage src="https://cdn.poehali.dev/projects/6e5e50f3-1716-4b4a-9a9e-56f5a3f3d433/files/f908b149-c0e2-4648-81a1-a716bf03e7fe.jpg" />
               <AvatarFallback className="text-4xl">ФД</AvatarFallback>
             </Avatar>
           </div>
