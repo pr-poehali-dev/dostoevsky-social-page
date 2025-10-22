@@ -103,10 +103,14 @@ const Index = () => {
         </header>
 
         <Tabs defaultValue="bio" className="w-full">
-          <TabsList className="grid w-full grid-cols-4 mb-8">
+          <TabsList className="grid w-full grid-cols-5 mb-8">
             <TabsTrigger value="bio">
               <Icon name="User" className="mr-2 h-4 w-4" />
               Биография
+            </TabsTrigger>
+            <TabsTrigger value="hobbies">
+              <Icon name="Heart" className="mr-2 h-4 w-4" />
+              Интересы
             </TabsTrigger>
             <TabsTrigger value="quotes">
               <Icon name="Quote" className="mr-2 h-4 w-4" />
@@ -121,6 +125,120 @@ const Index = () => {
               Карта мест
             </TabsTrigger>
           </TabsList>
+
+          <TabsContent value="hobbies" className="animate-fade-in">
+            <Card>
+              <CardHeader>
+                <CardTitle className="text-3xl">Интересы и увлечения</CardTitle>
+                <CardDescription>Любимые занятия и страсти Достоевского</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Card className="border-l-4 border-primary hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Icon name="Gamepad2" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Рулетка</h4>
+                          <p className="text-foreground/80">
+                            Страсть к азартным играм преследовала писателя всю жизнь. 
+                            Эта зависимость вдохновила его на создание романа «Игрок».
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-primary hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Icon name="BookOpen" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Чтение</h4>
+                          <p className="text-foreground/80">
+                            Обожал произведения Пушкина, Гоголя, Шекспира и Шиллера. 
+                            Литература была его главной духовной пищей с детства.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-primary hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Icon name="Newspaper" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Публицистика</h4>
+                          <p className="text-foreground/80">
+                            Издавал журналы «Время» и «Эпоха», писал статьи на социальные 
+                            и политические темы, вел «Дневник писателя».
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-primary hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Icon name="Footprints" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Прогулки</h4>
+                          <p className="text-foreground/80">
+                            Любил долгие прогулки по Петербургу, наблюдая за людьми и 
+                            впитывая атмосферу города, которая потом оживала в его романах.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-primary hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Icon name="Church" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Православие</h4>
+                          <p className="text-foreground/80">
+                            Глубокая религиозность и поиск духовных истин пронизывают 
+                            всё его творчество. Вера была опорой в трудные времена.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                  <Card className="border-l-4 border-primary hover:shadow-lg transition-shadow">
+                    <CardContent className="pt-6">
+                      <div className="flex items-start gap-4">
+                        <div className="bg-primary/10 p-3 rounded-full">
+                          <Icon name="Coffee" className="h-6 w-6 text-primary" />
+                        </div>
+                        <div>
+                          <h4 className="font-semibold text-xl mb-2">Кофе и чай</h4>
+                          <p className="text-foreground/80">
+                            Работал по ночам за чашкой крепкого чая или кофе. 
+                            Ночь была его самым продуктивным временем для творчества.
+                          </p>
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+                </div>
+              </CardContent>
+            </Card>
+          </TabsContent>
 
           <TabsContent value="bio" className="animate-fade-in">
             <Card>
